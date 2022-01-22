@@ -11,10 +11,10 @@ jobs:
     - name: Deploy to node_server
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
+        host: 97.74.86.93
+        username: deployer
         key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
+        port: 3222
         script: |
           cd souqMuscatBackend
           git pull origin main
