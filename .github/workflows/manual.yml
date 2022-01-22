@@ -12,12 +12,12 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 97.74.86.93
-        username: deployer
+        username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        port: 3222
+        port: ${{ secrets.SSH_PORT }}
         script: |
           cd souqMuscatBackend
           git pull origin main
-          docker build -t souqMuscat .
-          docker run --name souqMuscatBackend -d -p 8085:80 souqMuscat:latest
+          docker build -t souqmuscat .
+          docker run --name souqMuscatBackend -d -p 8085:80 souqmuscat:latest
           docker volume prune
