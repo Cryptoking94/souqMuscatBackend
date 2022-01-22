@@ -21,5 +21,5 @@ jobs:
             docker build -t souqmuscat .
             docker stop souqMuscatBackend
             docker rm souqMuscatBackend
-            docker run --name souqMuscatBackend -d -p 3000:80 souqmuscat:latest
+            docker run --name souqMuscatBackend -d -p 3000:8085 souqmuscat:latest
             docker volume prune
