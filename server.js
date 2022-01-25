@@ -20,7 +20,7 @@ import notFound from './helpers/functions/not-found.js'
 import cookieParser from 'cookie-parser'
 
 var app = express()
-app.use(cors({ credentials: true, origin: 'http://localhost:3001' }))
+app.use(cors({ credentials: true, origin: 'https://souqmuscat.com' }))
 app.use(bodyParser.json())
 app.use(express.static(__dirname))
 app.use(cookieParser())
