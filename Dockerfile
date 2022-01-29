@@ -1,17 +1,13 @@
 FROM node:14.17.6-slim
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+MAINTAINER Zubair
 
+# Install dependencies
 WORKDIR /home/node/app
 
-COPY ./package*.json ./
 
-USER node
-
-RUN npm install
-
-COPY . /home/node/app
-
+# Expose the app port
 EXPOSE 3000
 
-CMD [ "npm","run","start"]
+# Start the app
+CMD npm install && npm start
