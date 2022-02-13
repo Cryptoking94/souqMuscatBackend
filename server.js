@@ -24,7 +24,7 @@ app.use(cors({ credentials: true, origin: 'https://souqmuscat.com' }))
 app.use(bodyParser.json())
 app.use(express.static(__dirname))
 app.use(cookieParser())
-const PORT = process.env.PORT || 3000
+const PORTT = process.env.PORTT || 3000
 
 app.use(`/auth`, authentication)
 app.use(`/users`, users)
@@ -41,5 +41,5 @@ app.use(makeCallback(notFound))
 
 // listen for requests
 app.listen(PORT, () => {
-  console.log(`SERVER_IS_LISTENING_ON_PORT ${PORT}`)
+  console.log(`SERVER_IS_LISTENING_ON_PORT ${PORTT}`)
 })
