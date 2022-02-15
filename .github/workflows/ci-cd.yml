@@ -18,9 +18,9 @@ jobs:
         script: |
           cd /home/ubuntu/souqMuscatBackend
           git pull origin main
-          docker rmi souq:production
-          docker build . -t souq:production
           docker stop souqMuscatBackend
           docker rm souqMuscatBackend
+          docker rmi souq:production
+          docker build . -t souq:production
           docker run -dt --restart unless-stopped --name souqMuscatBackend -p 8081:3000 -v /home/ubuntu/souqMuscatBackend:/home/node/app souq:production
           docker volume prune
