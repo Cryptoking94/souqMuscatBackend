@@ -16,12 +16,12 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-        rm -rf souqMuscatBackend
-        git clone https://github.com/Cryptoking94/souqMuscatBackend
-        git checkout main
-        docker rmi souq:production
-        docker build . -t souq:production
-        docker stop souqMuscatBackend
-        docker rm souqMuscatBackend
-        docker run -dt --restart unless-stopped --name souqMuscatBackend -p 8081:3000 -v /home/ubuntu/souqMuscatBackend:/home/node/app soq:production
-        docker volume purne
+          rm -rf souqMuscatBackend
+          git clone https://github.com/Cryptoking94/souqMuscatBackend
+          git checkout main
+          docker rmi souq:production
+          docker build . -t souq:production
+          docker stop souqMuscatBackend
+          docker rm souqMuscatBackend
+          docker run -dt --restart unless-stopped --name souqMuscatBackend -p 8081:3000 -v /home/ubuntu/souqMuscatBackend:/home/node/app soq:production
+          docker volume purne
