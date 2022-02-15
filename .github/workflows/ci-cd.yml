@@ -23,5 +23,5 @@ jobs:
           docker build . -t souq:production
           docker stop souqMuscatBackend
           docker rm souqMuscatBackend
-          docker run -dt --restart unless-stopped --name souqMuscatBackend -p 8081:3000 -v /home/ubuntu/souqMuscatBackend:/home/node/app soq:production
+          docker run -dt --restart unless-stopped --name souqMuscatBackend -p 8081:3000 -v /home/ubuntu/souqMuscatBackend:/home/node/app souq:production
           docker volume purne
