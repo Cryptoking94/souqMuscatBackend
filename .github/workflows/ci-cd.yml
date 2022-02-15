@@ -18,10 +18,11 @@ jobs:
         script: |
           sudo rm -rf /home/ubuntu/souqMuscatBackend
           git clone https://github.com/Cryptoking94/souqMuscatBackend
+          /home/ubuntu/souqMuscatBackend
           git checkout main
           docker rmi souq:production
           docker build . -t souq:production
           docker stop souqMuscatBackend
           docker rm souqMuscatBackend
           docker run -dt --restart unless-stopped --name souqMuscatBackend -p 8081:3000 -v /home/ubuntu/souqMuscatBackend:/home/node/app souq:production
-          docker volume purne
+          docker volume prune
